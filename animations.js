@@ -1,6 +1,6 @@
-// animations.js
+gsap.registerPlugin(ScrollTrigger);
 
-// HERO SECTION
+// HERO
 gsap.from(".hero-title", {
   y: 60,
   opacity: 0,
@@ -25,19 +25,19 @@ gsap.from(".custom-contact-btn", {
 gsap.from(".brother-image", {
   scale: 0,
   duration: 1,
-  ease: "back.out(1.7)",
-  delay: 0.8
+  delay: 0.8,
+  ease: "back.out(1.7)"
 });
 
-// SECTIONS FADE IN
+// SECTIONS
 gsap.utils.toArray("section").forEach(section => {
   gsap.from(section, {
     scrollTrigger: {
       trigger: section,
       start: "top 85%"
     },
-    y: 40,
     opacity: 0,
+    y: 40,
     duration: 1
   });
 });
